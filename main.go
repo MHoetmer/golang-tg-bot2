@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -13,7 +12,6 @@ func main() {
 		port      = os.Getenv("PORT")
 		publicURL = os.Getenv("PUBLIC_URL") // you must add it to your config vars
 		token     = os.Getenv("TOKEN")      // you must add it to your config vars
-		mel       = os.Getenv("MEL")        // you must add it to your config vars
 	)
 
 	webhook := &tb.Webhook{
@@ -33,6 +31,4 @@ func main() {
 	b.Handle("/hello", func(m *tb.Message) {
 		b.Send(m.Sender, "Hi!")
 	})
-
-	fmt.Println("Mel", mel)
 }
