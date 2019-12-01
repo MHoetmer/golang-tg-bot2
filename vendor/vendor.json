@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "SVinfxcBSupb3+HEKpSBYFZ4Bh4=",
+			"path": "github.com/pkg/errors",
+			"revision": "7f95ac13edff643b8ce5398b6ccab125f8a20c1a",
+			"revisionTime": "2019-11-09T10:23:16Z"
+		},
+		{
+			"checksumSHA1": "7wzHJ5cIUlKfdKjY5lHYBdJ/Vog=",
+			"path": "gopkg.in/tucnak/telebot.v2",
+			"revision": "d0707a9d73c4b37c1c6ff59b95a775e156e70b12",
+			"revisionTime": "2019-10-05T06:12:24Z"
+		}
+	],
+	"rootPath": "Projects/SM_API/Telegram/golang-tg-bot2"
+}
