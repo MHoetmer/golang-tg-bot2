@@ -71,5 +71,36 @@ func main() {
 			&tb.ReplyMarkup{InlineKeyboard: inlineKeys})
 	})
 
+	inlineBtn_Avdotja := tb.InlineButton{
+		Unique: "Avdotja Romanovna Raskolnikov",
+		Text:   "Avdotja Romanovna Raskalnikov, also called Doenja, is the sister of Rodion.",
+	}
+
+	inlineBtn_Poelcherija := tb.InlineButton{
+		Unique: "Poelcherija Romanovna Raskolnikov",
+		Text:   "Poelcherija Aleksandrovna Raskalnikov is the mother of Rodion.",
+	}
+
+	inlineBtn_Razoemichin := tb.InlineButton{
+		Unique: "Dmitri Prokofjitsj Razoemichin",
+		Text:   "Dmitri Prokofjitsj Razoemichin is a study-friend of Raskalnikov.",
+	}
+
+	inlineBtn_Porfiri := tb.InlineButton{
+		Unique: "Pjotr Petrovitsj Porfiri",
+		Text:   "Pjotr Petrovitsj Porfiri is the police officer in charge of investigating the murder of Aljona en Lizaveta Ivanovna.",
+	}
+
+	inlineCharacterKeys := [][]tb.InlineButton{
+		[]tb.InlineButton{inlineBtn_Avdotja, inlineBtn_Poelcherija, inlineBtn_Razoemichin, inlineBtn_Porfiri},
+	}
+
+	b.Handle("/characters", func(m *tb.Message) {
+		b.Send(
+			m.Sender,
+			"Which friend do you want to know more about?",
+			&tb.ReplyMarkup{InlineKeyboard: inlineCharacterKeys})
+	})
+
 	b.Start()
 }
