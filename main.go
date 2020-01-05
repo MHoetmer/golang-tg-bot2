@@ -94,19 +94,19 @@ func main() {
 		b.Respond(c, &tb.CallbackResponse{
 			ShowAlert: false,
 		})
-		b.Send(c.Sender, "Avdotja Romanovna Raskalnikov, also called Doenja, is the sister of Rodion.")
+		b.Send(c.Sender, "Avdotja Romanovna Raskalnikov, we tend to call here Doenja, is my sister.")
 	})
 	b.Handle(&inlineBtn_Poelcherija, func(c *tb.Callback) {
 		b.Respond(c, &tb.CallbackResponse{
 			ShowAlert: false,
 		})
-		b.Send(c.Sender, "Poelcherija Aleksandrovna Raskalnikov is the mother of Rodion.")
+		b.Send(c.Sender, "Poelcherija Aleksandrovna Raskalnikov is my beloved mother.")
 	})
 	b.Handle(&inlineBtn_Razoemichin, func(c *tb.Callback) {
 		b.Respond(c, &tb.CallbackResponse{
 			ShowAlert: false,
 		})
-		b.Send(c.Sender, "Dmitri Prokofjitsj Razoemichin is a study-friend of Raskalnikov.")
+		b.Send(c.Sender, "I know Dmitri Prokofjitsj Razoemichin from my studies.")
 	})
 	b.Handle(&inlineBtn_Porfiri, func(c *tb.Callback) {
 		b.Respond(c, &tb.CallbackResponse{
