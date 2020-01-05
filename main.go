@@ -73,22 +73,22 @@ func main() {
 
 	inlineBtn_Avdotja := tb.InlineButton{
 		Unique: "Doenja",
-		Text:   "Avdotja Romanovna Raskalnikov",
+		Text:   "Doenja",
 	}
 
 	inlineBtn_Poelcherija := tb.InlineButton{
 		Unique: "Poelcherija",
-		Text:   "Poelcherija Aleksandrovna Raskalnikov",
+		Text:   "Poelcherija",
 	}
 
 	inlineBtn_Razoemichin := tb.InlineButton{
 		Unique: "Razoemichin",
-		Text:   "Dmitri Prokofjitsj Razoemichin",
+		Text:   "Razoemichin",
 	}
 
 	inlineBtn_Porfiri := tb.InlineButton{
 		Unique: "Porfiri",
-		Text:   "Pjotr Petrovitsj Porfiri",
+		Text:   "Porfiri",
 	}
 	b.Handle(&inlineBtn_Avdotja, func(c *tb.Callback) {
 		b.Respond(c, &tb.CallbackResponse{
