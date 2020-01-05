@@ -116,7 +116,8 @@ func main() {
 	})
 
 	inlineCharacterKeys := [][]tb.InlineButton{
-		[]tb.InlineButton{inlineBtn_Avdotja, inlineBtn_Poelcherija, inlineBtn_Razoemichin, inlineBtn_Porfiri},
+		[]tb.InlineButton{inlineBtn_Avdotja, inlineBtn_Poelcherija},
+		[]tb.InlineButton{inlineBtn_Razoemichin, inlineBtn_Porfiri},
 	}
 
 	b.Handle("/characters", func(m *tb.Message) {
