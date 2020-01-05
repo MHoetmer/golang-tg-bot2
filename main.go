@@ -72,24 +72,48 @@ func main() {
 	})
 
 	inlineBtn_Avdotja := tb.InlineButton{
-		Unique: "Avdotja Romanovna Raskolnikov",
-		Text:   "Avdotja Romanovna Raskalnikov, also called Doenja, is the sister of Rodion.",
+		Unique: "Doenja",
+		Text:   "Avdotja Romanovna Raskalnikov",
 	}
 
 	inlineBtn_Poelcherija := tb.InlineButton{
-		Unique: "Poelcherija Romanovna Raskolnikov",
-		Text:   "Poelcherija Aleksandrovna Raskalnikov is the mother of Rodion.",
+		Unique: "Poelcherija",
+		Text:   "Poelcherija Aleksandrovna Raskalnikov",
 	}
 
 	inlineBtn_Razoemichin := tb.InlineButton{
-		Unique: "Dmitri Prokofjitsj Razoemichin",
-		Text:   "Dmitri Prokofjitsj Razoemichin is a study-friend of Raskalnikov.",
+		Unique: "Razoemichin",
+		Text:   "Dmitri Prokofjitsj Razoemichin",
 	}
 
 	inlineBtn_Porfiri := tb.InlineButton{
-		Unique: "Pjotr Petrovitsj Porfiri",
-		Text:   "Pjotr Petrovitsj Porfiri is the police officer in charge of investigating the murder of Aljona en Lizaveta Ivanovna.",
+		Unique: "Porfiri",
+		Text:   "Pjotr Petrovitsj Porfiri",
 	}
+	b.Handle(&inlineBtn_Avdotja, func(c *tb.Callback) {
+		b.Respond(c, &tb.CallbackResponse{
+			ShowAlert: false,
+		})
+		b.Send(c.Sender, "Avdotja Romanovna Raskalnikov, also called Doenja, is the sister of Rodion.")
+	})
+	b.Handle(&inlineBtn_Poelcherija, func(c *tb.Callback) {
+		b.Respond(c, &tb.CallbackResponse{
+			ShowAlert: false,
+		})
+		b.Send(c.Sender, "Poelcherija Aleksandrovna Raskalnikov is the mother of Rodion.")
+	})
+	b.Handle(&inlineBtn_Razoemichin, func(c *tb.Callback) {
+		b.Respond(c, &tb.CallbackResponse{
+			ShowAlert: false,
+		})
+		b.Send(c.Sender, "Dmitri Prokofjitsj Razoemichin is a study-friend of Raskalnikov.")
+	})
+	b.Handle(&inlineBtn_Porfiri, func(c *tb.Callback) {
+		b.Respond(c, &tb.CallbackResponse{
+			ShowAlert: false,
+		})
+		b.Send(c.Sender, "Pjotr Petrovitsj Porfiri is the police officer in charge of investigating the murder of Aljona en Lizaveta Ivanovna.")
+	})
 
 	inlineCharacterKeys := [][]tb.InlineButton{
 		[]tb.InlineButton{inlineBtn_Avdotja, inlineBtn_Poelcherija, inlineBtn_Razoemichin, inlineBtn_Porfiri},
