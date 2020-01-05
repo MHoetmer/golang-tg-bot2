@@ -90,6 +90,16 @@ func main() {
 		Unique: "Porfiri",
 		Text:   "Porfiri",
 	}
+
+	inlineBtn_Alyona := tb.InlineButton{
+		Unique: "Alyona",
+		Text:   "Alyona",
+	}
+
+	inlineBtn_Lizaveta := tb.InlineButton{
+		Unique: "Lizaveta",
+		Text:   "Lizaveta",
+	}
 	b.Handle(&inlineBtn_Avdotja, func(c *tb.Callback) {
 		b.Respond(c, &tb.CallbackResponse{
 			ShowAlert: false,
@@ -108,11 +118,29 @@ func main() {
 		})
 		b.Send(c.Sender, "I know Dmitri Prokofjitsj Razoemichin from my studies.")
 	})
+
+	b.Handle(&inlineBtn_Alyona, func(c *tb.Callback) {
+		b.Respond(c, &tb.CallbackResponse{
+			ShowAlert: false,
+		})
+		b.Send(c.Sender, "Alyona Ivanovna is a 60-years old devil pawnbroker. She domineers and emotionally abuses her sister Lizaveta.")
+	})
+	b.Handle(&inlineBtn_Lizaveta, func(c *tb.Callback) {
+		b.Respond(c, &tb.CallbackResponse{
+			ShowAlert: false,
+		})
+		b.Send(c.Sender, "Lizaveta Ivanovna is 35-years old, unmarried, over six feet tall and mentally challanged. She is often described as slow, soft, shy, timid and submisive.")
+	})
+
+	inlineCharacterSisterKeys := [][]tb.InlineButton{
+		[]tb.InlineButton{inlineBtn_Alyona, inlineBtn_Lizaveta},
+	}
+
 	b.Handle(&inlineBtn_Porfiri, func(c *tb.Callback) {
 		b.Respond(c, &tb.CallbackResponse{
 			ShowAlert: false,
 		})
-		b.Send(c.Sender, "Pjotr Petrovitsj Porfiri is the police officer in charge of investigating the murder of Aljona en Lizaveta Ivanovna.")
+		b.Send(c.Sender, "Pjotr Petrovitsj Porfiri is the police officer in charge of investigating the murder of Aljona en Lizaveta Ivanovna.", inlineCharacterSisterKeys)
 	})
 
 	inlineCharacterKeys := [][]tb.InlineButton{
