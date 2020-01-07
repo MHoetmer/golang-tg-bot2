@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"net/http"
 	"os"
 
 	tb "gopkg.in/tucnak/telebot.v2"
@@ -32,6 +33,7 @@ func main() {
 
 	//hello
 	b.Handle("/hello", func(m *tb.Message) {
+		http.Get("https://api.telegram.org/bot1030683957:AAF-Yo-CbCm1M6Zi5gf8zaNyMQf462PXSd0/sendMessage?chat_id=-355434429&text=Moetnaarbed")
 		b.Send(m.Sender, fmt.Sprintf("You entered: %s %s %s %t %d %s %s %d", m.Payload, m.Sender.FirstName, m.Sender.Username, m.Sender.IsBot, m.Chat.ID, m.Chat.Type, m.Chat.Title, m.Sender.ID))
 	})
 
