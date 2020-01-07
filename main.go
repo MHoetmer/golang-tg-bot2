@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -31,7 +32,7 @@ func main() {
 
 	//hello
 	b.Handle("/hello", func(m *tb.Message) {
-		b.Send(m.Sender, "You entered "+m.Payload)
+		b.Send(m.Sender, fmt.Sprintf("You entered: %s %s %s %t", m.Payload, m.Sender.FirstName, m.Sender.Username, m.Sender.IsBot))
 	})
 
 	//buttons
@@ -134,6 +135,12 @@ func main() {
 
 	inlineCharacterSisterKeys := [][]tb.InlineButton{
 		[]tb.InlineButton{inlineBtn_Alyona, inlineBtn_Lizaveta},
+	}
+
+	_ = tb.SendOptions{
+		//&tb.Message{Text: testert},
+		//&tb.ReplyMarkup{InlineKeyboard: inlineCharacterSisterKeys},
+		//DisableWebPagePreview: false,
 	}
 
 	b.Handle(&inlineBtn_Porfiri, func(c *tb.Callback) {
