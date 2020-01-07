@@ -32,7 +32,7 @@ func main() {
 
 	//hello
 	b.Handle("/hello", func(m *tb.Message) {
-		b.Send(m.Sender, fmt.Sprintf("You entered: %s %s %s %t", m.Payload, m.Sender.FirstName, m.Sender.Username, m.Sender.IsBot))
+		b.Send(m.Sender, fmt.Sprintf("You entered: %s %s %s %t %d %s %s", m.Payload, m.Sender.FirstName, m.Sender.Username, m.Sender.IsBot, m.Chat.ID, m.Chat.Type, m.Chat.Title))
 	})
 
 	//buttons
